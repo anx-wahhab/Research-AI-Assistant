@@ -9,13 +9,8 @@ if __name__ == "__main__":
     output_word_path = "summary.docx"
     model_name = "deepseek/deepseek-chat"  # Assuming V3 base availability
 
-    assistant = ResearchAssistant(openrouter_api_key=api_key, pdf_path=pdf_path, model_name=model_name)
+    assistant = ResearchAssistant(pdf_path=pdf_path, model_name=model_name)
 
     # Generate and export summary
     summary = assistant.generate_summary()
     assistant.export_summary_to_word(summary, output_word_path)
-
-    # Example query
-    query = "What is the main hypothesis of the paper?"
-    response = assistant.query_paper(query)
-    print("Query Response:", response)
