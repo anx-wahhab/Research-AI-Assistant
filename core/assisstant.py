@@ -1,7 +1,7 @@
 from typing import Dict
-from research_assistant.utils.helpers import load_pdf, create_vectorstore, split_documents
-from research_assistant.llm_setup import setup_llm, setup_qa_chain, generate_summary_sections
-from research_assistant.exporters import export_to_word
+from utils.helpers import load_pdf, create_vectorstore, split_documents
+from utils.llm_setup import setup_llm, setup_qa_chain, generate_summary_sections
+from utils.exporters import export_to_word
 
 class ResearchAssistant:
     """

@@ -3,15 +3,17 @@ from core.assisstant import ResearchAssistant
 
 # Example usage
 if __name__ == "__main__":
-    api_key = os.getenv("OPENROUTER_API_KEY")
+    # Replace with your actual API key and PDF path
+    api_key = os.getenv("OPENROUTER_API_KEY")  # Or hardcode for testing
     pdf_path = "research_paper.pdf"
     output_word_path = "summary.docx"
-    model_name = "deepseek/deepseek-chat"
+    model_name = "deepseek/deepseek-chat"  # Assuming V3 base availability
 
     assistant = ResearchAssistant(openrouter_api_key=api_key, pdf_path=pdf_path, model_name=model_name)
 
-    # Generate
+    # Generate and export summary
     summary = assistant.generate_summary()
+    assistant.export_summary_to_word(summary, output_word_path)
 
     # Example query
     query = "What is the main hypothesis of the paper?"
